@@ -69,11 +69,29 @@ button{
         color: #2e2f42;
         padding: 24px 0;
         display: block;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover,
-.nav-link:focus{
-    color:#404bbf;
+.nav-link:focus {
+        color: #404bbf;
 }
+
+.current{
+position: relative;
+color: #404bbf;
+}
+.current::after{
+   content: "" ; 
+   position: absolute;
+   left: 0;
+   bottom: -1px;
+background: #404bbf;
+border-radius: 2px;
+height: 4px;
+width: 100% ;
+}
+
+
 .address{
     font-style: normal;
     margin-left: auto;
@@ -87,6 +105,7 @@ button{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-link:hover,
 .address-link:focus{
@@ -94,23 +113,39 @@ button{
 }
 /*---Section Hero---*/
 .hero{
-
-        background: #2e2f42;
-        padding: 188px 0;
-        
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #2e2f42;
 }
+        .hero-container{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 1440px;
+         height: 600px;
+         padding: 188px 0;
+}
+.background-image{
+
+
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/people-office.jpg');
+        
+   }
+        
+
+        
 .main-title{
         font-weight: 700;
         font-size: 56px;
         line-height: 1.07;
         letter-spacing: 0.02em;
         text-align: center;
-        color: #fff;
-        margin-right: auto;
-        margin-left: auto;
         margin-bottom: 48px;
         max-width: 496px;
+        margin-top: 188px;
         
+        color: #fff;
 }
 
 .buy-now-button{
@@ -160,6 +195,16 @@ button{
 }
 .advantages-list-item{
         width: calc((100% - 72px) / 4);
+}
+.advantages-icons{
+                border: 1px solid #8e8f99;
+                border-radius: 4px;
+                width: 264px;
+                height: 112px;
+                background: #f4f4fd;
+}
+.icons{
+        margin: 24px 100px;
 }
 .list-name{
         font-weight: 500;
@@ -236,6 +281,36 @@ button{
         letter-spacing: 0.02em;
         color: #434455;
 }
+.team-icons-list{
+       display: flex;
+       gap: 24px;
+       justify-content: center;
+}
+.team-icons-list-item{
+        width: 40px;
+        height: 40px;
+}
+.social-link{
+        width: 100%;
+        height: 100%;
+        background-color: #4d5ae5;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icons-team{
+        fill: none;
+         stroke: #f4f4fd;
+         width: 24px;
+         height: 24px;
+
+}
+.social-link:hover,
+.social-link:focus{
+        background-color: #404bbf;
+}
 
 /*---Our Portfolio---*/
 .section {
@@ -262,10 +337,15 @@ button{
         row-gap: 48px;
 }
 .portfolio-list-item{
-
-        background: #fff;
+         background: #fff;
         width: calc((100% - 48px) / 3);
+        
 }
+.portfolio-overlay{
+        position: relative;
+        overflow: hidden;
+}
+
 .name-text{
 
         padding: 32px 16px;
@@ -292,12 +372,37 @@ button{
         color: #434455;
 
 }
+
+.portfolio-overlay-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     overflow: auto;
+    background-color: #4d5ae5;
+    color: #f4f4fd;
+    transform: translateY(100%);
+    transition: transform 250ms linear;
+    padding: 40px 20px 164px;
+}
+
+.portfolio-list-item:hover .portfolio-overlay-text{
+        transform: translateY(0%);
+}
 /*---Section footer---*/
 .section-footer {
         background-color: #2e2f42;
         padding: 100px 0;
 }
-
+.footer-container{
+      display: flex;
+      align-items: baseline;  
+}
+.footer-content{
+        width: 264px;
+        margin-right: 120px;;
+}
 .footer-logo {
         font-family: "Raleway", sans-serif;
         font-weight: 700;
@@ -318,10 +423,55 @@ button{
 }
 
 .footer-text {
-        max-width: 264px ;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #f4f4fd;
         
 }
+
+.social-list{
+        display: flex;
+        column-gap: 16px;
+        width: 280px;
+        height: 40px;
+}       
+
+.footer-social-media {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #fff;
+        margin-bottom: 15px;
+
+
+}
+
+.social-list-link{
+        display: flex;
+        fill: #f4f4fd;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #4d5ae5;
+        width: 40px;
+        height: 40px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.social-icons {
+        
+        fill: none;
+        stroke: #f4f4fd;
+        width: 24px;
+        height: 24px;
+
+}
+
+.social-list-link:hover,
+.social-list-link:focus{
+        background-color: #31d0aa; 
+}
+
+
