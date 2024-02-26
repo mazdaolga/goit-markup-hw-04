@@ -73,7 +73,7 @@ button{
         color: #2e2f42;
         padding: 24px 0;
         display: block;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -110,7 +110,7 @@ width: 100% ;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
-    transition: color cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .address-link:hover,
 .address-link:focus{
@@ -247,9 +247,6 @@ width: 100% ;
 }
 .team-list-item{
         background-color: #FFFFFF;
-        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-                0px 1px 1px rgba(46, 47, 66, 0.16),
-                0px 2px 1px rgba(46, 47, 66, 0.08);
         border-radius: 0 0 4px 4px;
         width: calc((100% - 72px) / 4);
 
@@ -316,6 +313,9 @@ width: 100% ;
 .social-link:hover,
 .social-link:focus{
         background-color: #404bbf;
+        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+                        0px 1px 1px rgba(46, 47, 66, 0.16),
+                        0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 /*---Our Portfolio---*/
@@ -459,7 +459,7 @@ width: 100% ;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
-        color: #fff;
+        color: #FFFFFF;
         margin-bottom: 16px;
 
 
